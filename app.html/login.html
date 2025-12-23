@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | LUXE</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --text-color: #1a1a1a;
+            --bg-color: #ffffff;
+            --accent-color: #D4AF37;
+            /* Gold */
+            --secondary-bg: #f5f5f5;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --input-border: #e0e0e0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            background-color: var(--secondary-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--text-color);
+        }
+
+        .login-card {
+            background-color: var(--bg-color);
+            padding: 3.5rem;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .login-header h1 {
+            font-family: var(--font-heading);
+            margin: 0 0 1rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .login-header p {
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 1px solid var(--input-border);
+            background: #fafafa;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: var(--font-body);
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-color);
+            background: #fff;
+        }
+
+        .action-buttons {
+            display: flex;
+            /* Or grid */
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background-color: #1a1a1a;
+            color: white;
+            border: 1px solid #1a1a1a;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 2rem 0;
+            color: #888;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #eee;
+        }
+
+        .divider::before {
+            margin-right: 1em;
+        }
+
+        .divider::after {
+            margin-left: 1em;
+        }
+
+        .g_id_signin {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 2rem;
+                box-shadow: none;
+                background-color: transparent;
+                border-top: none;
+            }
+
+            body {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <h1>Sign In</h1>
+            <p>Welcome back to LUXE</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+            </div>
+
+            <div class="action-buttons">
+                <button type="submit" class="btn btn-primary" id="loginBtn">Log In</button>
+                <button type="button" class="btn btn-secondary" id="signupBtn">Create Account</button>
+            </div>
+        </form>
+
+        <div class="divider">or continue with</div>
+
+        <!-- Google Identity Services Script -->
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+        <!-- Google Sign-In Configuration -->
+        <div id="g_id_onload" data-client_id="kumaradarsh64571@gmail.com" data-callback="handleCredentialResponse"
+            data-auto_prompt="false">
+        </div>
+
+        <!-- Google Sign-In Button -->
+        <div class="g_id_signin" data-type="standard" data-size="large" data-theme="form-input" data-text="sign_in_with"
+            data-shape="rectangular" data-logo_alignment="left" data-width="340">
+        </div>
+    </div>
+
+    <script>
+        // Handle Google Sign-In
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            window.location.href = 'index.html';
+        }
+
+        // Handle Form Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const signupBtn = document.getElementById('signupBtn');
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                if (username && password) {
+                    console.log('Login attempt:', { username });
+                    window.location.href = 'index.html';
+                }
+            });
+
+            signupBtn.addEventListener('click', () => {
+                console.log('Sign up clicked');
+                alert('Redirecting to Sign Up page...');
+            });
+        });
+    </script>
+</body>
+
+</html>

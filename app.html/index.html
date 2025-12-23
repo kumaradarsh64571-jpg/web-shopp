@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | Premium Fashion</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (using simple unicode/text fallback if no library, but here using placeholders or emoji if SVG is too complex for this raw HTML, actually let's use FontAwesome CDN for premium feel) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1 class="logo fade-in">LUXE.</h1>
+            <p class="fade-in delay">Elegance Awaits</p>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header>
+        <div class="logo">LUXE.</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <a href="login.html"><i class="fas fa-user"></i></a>
+            <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elegance is an Attitude</h1>
+            <p>Discover the new Spring/Summer Collection 2025. Curated for the modern individual.</p>
+            <a href="#" class="btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="cat-card">
+            <img src="https://images.unsplash.com/photo-1617137968427-b2b16501253e?q=80&w=2070&auto=format&fit=crop"
+                alt="Women">
+            <div class="cat-content">
+                <h3>Women</h3>
+                <a href="#">Shop Now &rarr;</a>
+            </div>
+        </div>
+        <div class="cat-card">
+            <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=1974&auto=format&fit=crop"
+                alt="Men">
+            <div class="cat-content">
+                <h3>Men</h3>
+                <a href="#">Shop Now &rarr;</a>
+            </div>
+        </div>
+        <div class="cat-card">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?q=80&w=2070&auto=format&fit=crop"
+                alt="Accessories">
+            <div class="cat-content">
+                <h3>Accessories</h3>
+                <a href="#">View All &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured">
+        <h2 class="section-title">Trending Now</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+                        alt="Dress">
+                </div>
+                <div class="product-info">
+                    <h4>Silk Evening Dress</h4>
+                    <p class="product-price">$299.00</p>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop"
+                        alt="T-Shirt">
+                </div>
+                <div class="product-info">
+                    <h4>Essential Cotton Tee</h4>
+                    <p class="product-price">$45.00</p>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1000&auto=format&fit=crop"
+                        alt="Jacket">
+                </div>
+                <div class="product-info">
+                    <h4>Structured Blazer</h4>
+                    <p class="product-price">$189.00</p>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop"
+                        alt="Coat">
+                </div>
+                <div class="product-info">
+                    <h4>Wool Blend Coat</h4>
+                    <p class="product-price">$450.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Join the World of LUXE</h2>
+        <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 LUXE Fashion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
